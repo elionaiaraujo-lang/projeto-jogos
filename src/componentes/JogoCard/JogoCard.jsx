@@ -1,5 +1,6 @@
-function JogoCard({ nome, genero, empresa, imagem }) {
+import { Link } from "react-router-dom";
 
+function JogoCard({ id, nome, genero, empresa, imagem }) {
   return (
     <div style={{
       border: "2px solid white",
@@ -11,10 +12,10 @@ function JogoCard({ nome, genero, empresa, imagem }) {
       backgroundColor: "#111320",
       boxShadow: "0px 0px 10px rgba(255,255,255,0.2)"
     }}>
-
       <img
         src={imagem}
         alt={nome}
+        title={nome}
         style={{
           width: "100%",
           height: "140px",
@@ -32,15 +33,20 @@ function JogoCard({ nome, genero, empresa, imagem }) {
       </h3>
 
       <p style={{ margin: "5px" }}>
-        <strong>Gênero:</strong> {genero}
+        <strong>Genero:</strong> {genero}
       </p>
 
       <p style={{ margin: "5px" }}>
         <strong>Empresa:</strong> {empresa}
       </p>
 
+      <Link to={`/${id}`}>
+        <button>
+          Ver detalhes
+        </button>
+      </Link>
     </div>
-  )
+  );
 }
 
-export default JogoCard
+export default JogoCard;
