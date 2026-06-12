@@ -1,13 +1,10 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 import JogoCard from "../componentes/JogoCard/JogoCard";
 import jogos from "../componentes/Data/jogos";
 
 function Home() {
   const { id } = useParams();
-  const [listaJogos] = useState(jogos);
-
-  const jogoSelecionado = listaJogos[Number(id) - 1];
+  const jogoSelecionado = jogos[Number(id) - 1];
 
   if (id && !jogoSelecionado) {
     return (
@@ -18,7 +15,7 @@ function Home() {
     );
   }
 
-  const jogosParaMostrar = id ? [jogoSelecionado] : listaJogos;
+  const jogosParaMostrar = id ? [jogoSelecionado] : jogos;
 
   return (
     <>
@@ -35,14 +32,15 @@ function Home() {
         }}
       >
         {jogosParaMostrar.map((jogo, index) => (
-       <JogoCard
-  key={jogo.id}
-  id={jogo.id}
-  nome={jogo.nome}
-  genero={jogo.genero}
-  empresa={jogo.empresa}
-  imagem={jogo.imagem}
-/>
+          <JogoCard
+            key={jogo.id}
+            id={jogo.id}
+            nome={jogo.nome}
+            genero={jogo.genero}
+            empresa={jogo.empresa}
+            imagem={jogo.imagem}
+            prioridade={index === 0}
+          />
         ))}
       </section>
     </>

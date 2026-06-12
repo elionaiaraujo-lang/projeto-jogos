@@ -1,8 +1,8 @@
-import fivem from "../../assets/fivem.gif";
-import valorant from "../../assets/valorant.gif";
-import rocketleague from "../../assets/rocketleague.gif";
-import fortnite from "../../assets/fortnite.gif";
-import minecraft from "../../assets/minecraft.gif";
+import fivem from "../../assets/fivem-card.jpg";
+import valorant from "../../assets/valorant-card.jpg";
+import rocketleague from "../../assets/rocketleague-card.jpg";
+import fortnite from "../../assets/fortnite-card.jpg";
+import minecraft from "../../assets/minecraft-card.jpg";
 
 const jogos = [
   {

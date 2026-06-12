@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function JogoCard({ id, nome, genero, empresa, imagem }) {
+function JogoCard({ id, nome, genero, empresa, imagem, prioridade = false }) {
   return (
     <div style={{
       border: "2px solid white",
@@ -16,6 +16,11 @@ function JogoCard({ id, nome, genero, empresa, imagem }) {
         src={imagem}
         alt={nome}
         title={nome}
+        width="500"
+        height="280"
+        loading={prioridade ? "eager" : "lazy"}
+        decoding="async"
+        fetchPriority={prioridade ? "high" : "auto"}
         style={{
           width: "100%",
           height: "140px",
@@ -33,7 +38,7 @@ function JogoCard({ id, nome, genero, empresa, imagem }) {
       </h3>
 
       <p style={{ margin: "5px" }}>
-        <strong>Genero:</strong> {genero}
+        <strong>Gênero:</strong> {genero}
       </p>
 
       <p style={{ margin: "5px" }}>
